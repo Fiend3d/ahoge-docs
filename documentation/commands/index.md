@@ -1,6 +1,6 @@
 # MEL commands
 
-Ahoge's scripting surface is small: **one plug-in command** does the geometry work, **one MEL procedure** opens the interface, and **three context commands** hold the tool settings. Everything on the shelf and in the menu is a call to one of them.
+Ahoge provides commands for geometry queries, conversion and export, MEL procedures for its interface, and context commands for tool settings. Use the references below to automate these tasks.
 
 | Name | Kind | What it is |
 |---|---|---|
@@ -16,15 +16,18 @@ Ahoge's scripting surface is small: **one plug-in command** does the geometry wo
 | `ahogeShape`, `nurbopusNode`, `swirlNode` | node types | The hair and its helper nodes |
 
 ```mel
-// The whole plug-in is one command with flags
+// Find the closest point on a mesh
 ahogeCmd -m "headMesh" -cp 1.0 4.2 -3.7;
+```
 
-// Python goes through maya.cmds
+The same query in Python:
+
+```python
 import maya.cmds as cmds
 p = cmds.ahogeCmd(mesh="headMesh", closestPoint=(1.0, 4.2, -3.7))
 ```
 
-Each command and its flags in detail:
+For command syntax, flags and examples, see:
 
 - [ahogeCmd](/documentation/commands/ahogecmd)
 - [ahoge and the run-time commands](/documentation/commands/ahoge-and-runtime-commands)

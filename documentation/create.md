@@ -12,7 +12,7 @@ Hair grows along the **V-coordinate** of the NURBS surface.
   <figcaption>Hair grows along the V-coordinate of the surface.</figcaption>
 </figure>
 
-If the hair grows in the wrong direction, just swap the surface direction:
+If the hair grows in the wrong direction, swap the surface direction:
 
 > **Modeling menu → Surfaces → Reverse Direction → Swap**
 

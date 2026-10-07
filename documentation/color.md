@@ -8,7 +8,7 @@
 
 ## Tips
 
-- Use subtle root-to-tip variation instead of flat color — flat strands read as CGI immediately.
+- Use subtle root-to-tip variation to give the hair more depth.
 - Combine color variation with [Randomize Noise](/documentation/noise#randomize-noise) and [Multistrand](/documentation/multistrand) to break up large uniform areas.
 - For render-side color work (shader networks, transmission, cutout opacity) see [Arnold](/documentation/arnold).
 

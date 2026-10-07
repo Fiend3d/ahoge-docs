@@ -150,10 +150,10 @@ on the backdrop closes it. Add new gallery images with the usual `<div class="ah
 `tutorials/videos.md` lists the tutorials from the official YouTube channel. Each card is a **facade**: the
 page ships only a YouTube thumbnail (`i.ytimg.com/vi/<id>/hq720.jpg`) inside a `<button class="ahoge-video-thumb"
 data-video="<id">>`, and `AhogeVideoPlayer.vue` swaps that button for a `youtube-nocookie.com/embed/<id>`
-iframe when it is clicked. Nothing from YouTube loads until someone actually plays a video.
+iframe when it is clicked. The embedded player loads only when someone plays a video; thumbnails load with the page.
 
-Cards are `<div class="ahoge-video">` with two separate anchors — `.ahoge-video-thumb` and
-`.ahoge-video-title`. Do **not** nest a link inside a link: the HTML parser closes the outer anchor early and
+Cards are `<div class="ahoge-video">` with a `.ahoge-video-thumb` button and a separate
+`.ahoge-video-title` link. Do **not** nest a link inside a link: the HTML parser closes the outer anchor early and
 the card layout breaks.
 
 ## Theme
@@ -178,6 +178,6 @@ few `<figure>` / `<div class="ahoge-grid">` blocks for image layouts.
 
 ### Code fences
 
-Shiki has no MEL grammar, so a ` ```mel ` fence builds with a warning and renders as plain text.
-MEL examples use ` ```bash `, which colours `$variables`, quoted strings and backtick command
-calls. Python examples use ` ```python `.
+Use `mel` fences for MEL examples. The custom grammar in `.vitepress/mel-language.ts` highlights
+commands, flags, variables, strings, comments and backtick expressions in both themes.
+Use `python` fences for Python and `bash` only for shell commands. Keep each language in its own block.

@@ -1,6 +1,6 @@
 # Documentation
 
-Ahoge is three nodes and a set of tools that edit them. Everything else — the menu, the shelf, the export options — is a way of changing the attributes of `ahogeShape`, `nurbopusNode` and `swirlNode`.
+Ahoge generates hair with three node types: `ahogeShape`, `nurbopusNode` and `swirlNode`. This reference covers their attributes, the tools used to shape hair, and the commands for scripting and export.
 
 ## Core workflow
 
@@ -8,7 +8,7 @@ Ahoge is three nodes and a set of tools that edit them. Everything else — the 
 2. Create an Ahoge shape from it — hair grows along the surface **V-coordinate**.
 3. Tune the strand attributes: [Segments and Density](/documentation/segments-and-density), [Width](/documentation/width), [Color](/documentation/color), [Noise](/documentation/noise), [Spray](/documentation/spray), [Multistrand](/documentation/multistrand), [Clump](/documentation/clump).
 4. Shape the result with the interactive tools: [Curve Brush](/documentation/tools/curve-brush), [Surface Brush](/documentation/tools/surface-brush), [Carousel](/documentation/tools/carousel), [Nurbopus](/documentation/nurbopus), [Swirl](/documentation/swirl), [Select](/documentation/select).
-5. Combine hairs: [Connect / Disconnect](/documentation/connect-disconnect), [Duplicate](/documentation/duplicate).
+5. Combine hair shapes: [Connect / Disconnect](/documentation/connect-disconnect), [Duplicate](/documentation/duplicate).
 6. Preview and render: [Viewport](/documentation/viewport), [Arnold](/documentation/arnold), [3Delight and RenderMan](/documentation/renderers).
 7. Deliver: [Alembic export](/documentation/alembic), [Unreal Engine export](/documentation/unreal).
 

@@ -19,6 +19,9 @@ const walk = (d) => {
 walk(base);
 
 const htmlOf = new Map(pages.map((f) => [f, fs.readFileSync(f, "utf8")]));
+const idsOf = new Map([...htmlOf].map(([f, html]) => [
+  f, new Set([...html.matchAll(/\bid="([^"]*)"/g)].map((match) => match[1]))
+]));
 
 const isAsset = (v) => /\.(css|js|woff2?|png|jpe?g|webp|gif|svg|ico|map)$/i.test(v);
 const value = (attr) => attr.replace(/^[a-z]+="/, "").replace(/"$/, "");
@@ -36,6 +39,7 @@ const stripBase = (v) => (prefix === "/" ? v : v.slice(prefix.length));
 const isLocal = (v) => !v.startsWith("//") && !/^[a-z]+:\/\//i.test(v) && (prefix === "/" ? v.startsWith("/") : v.startsWith(prefix + "/"));
 
 const badLinks = [];
+const badFragments = [];
 const badImages = [];
 let links = 0;
 let images = 0;
@@ -46,14 +50,21 @@ for (const f of pages) {
 
   for (const attr of html.match(/href="[^"]*"/g) || []) {
     const href = value(attr);
-    if (!isLocal(href)) continue;
+    if (!isLocal(href) && !href.startsWith("#")) continue;
     links++;
     if (isAsset(href)) continue;
-    const rel = stripBase(href).split("#")[0].split("?")[0];
-    if (!rel) continue; // site root
-    const target = path.join(base, rel);
-    if (fs.existsSync(target) || fs.existsSync(target + ".html") || fs.existsSync(path.join(target, "index.html"))) continue;
-    badLinks.push(where + " -> " + href);
+    const rel = href.startsWith("#") ? "" : stripBase(href).split("#")[0].split("?")[0];
+    const target = href.startsWith("#") ? f : path.join(base, rel);
+    const resolved = [target, target + ".html", path.join(target, "index.html")]
+      .find((candidate) => fs.existsSync(candidate) && fs.statSync(candidate).isFile());
+    if (!resolved) {
+      badLinks.push(where + " -> " + href);
+      continue;
+    }
+    const fragment = href.includes("#") ? href.slice(href.indexOf("#") + 1) : "";
+    if (fragment && idsOf.has(resolved) && !idsOf.get(resolved).has(decodeURIComponent(fragment))) {
+      badFragments.push(where + " -> " + href);
+    }
   }
 
   for (const attr of html.match(/src="[^"]*"/g) || []) {
@@ -71,7 +82,9 @@ console.log("pages checked:", pages.length);
 console.log("internal links checked:", links);
 console.log("broken internal links:", badLinks.length);
 badLinks.forEach((b) => console.log("  " + b));
+console.log("broken section links:", badFragments.length);
+badFragments.forEach((b) => console.log("  " + b));
 console.log("local assets checked:", images);
 console.log("missing assets:", badImages.length);
 badImages.forEach((b) => console.log("  " + b));
-process.exit(badLinks.length || badImages.length ? 1 : 0);
+process.exit(badLinks.length || badFragments.length || badImages.length ? 1 : 0);

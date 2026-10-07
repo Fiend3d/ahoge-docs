@@ -4,8 +4,8 @@ Get from an empty scene to rendered hair in about ten minutes.
 
 ## 1. Check the install
 
-The **Ahoge** menu should be in the Maya window bar. If it is missing, restart Maya and tick **Loaded**
-for the Ahoge plug-in in **Windows → Settings → Plug-in Manager** — see [Installation](/installation).
+The **Ahoge** menu should be in the Maya menu bar. If it is missing, restart Maya and tick **Loaded**
+for the Ahoge plug-in in **Windows → Settings/Preferences → Plug-in Manager** — see [Installation](/installation).
 
 ## 2. Make a source surface
 

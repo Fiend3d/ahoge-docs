@@ -20,7 +20,10 @@ export const melLanguage = {
     { include: '#variables' },
     { include: '#declarations' },
     { include: '#keywords' },
-    { include: '#functions' }
+    { include: '#constants' },
+    { include: '#functions' },
+    { include: '#commands' },
+    { include: '#operators' }
   ],
   repository: {
     comments: {
@@ -40,23 +43,27 @@ export const melLanguage = {
     'command-substitution': {
       begin: '`',
       end: '`',
-      name: 'string.interpolated.mel',
-      beginCaptures: { '0': { name: 'punctuation.definition.string.begin.mel' } },
-      endCaptures: { '0': { name: 'punctuation.definition.string.end.mel' } },
+      name: 'meta.command-substitution.mel',
+      beginCaptures: { '0': { name: 'keyword.operator.command-substitution.mel' } },
+      endCaptures: { '0': { name: 'keyword.operator.command-substitution.mel' } },
       patterns: [
+        { include: '#comments' },
+        { include: '#strings' },
         { include: '#flags' },
         { include: '#numbers' },
         { include: '#variables' },
-        { include: '#strings' },
-        { include: '#functions' }
+        { include: '#constants' },
+        { include: '#functions' },
+        { include: '#commands' },
+        { include: '#operators' }
       ]
     },
     flags: {
-      match: '(?<=\\s)-[A-Za-z][A-Za-z0-9_]*',
-      name: 'variable.parameter.flag.mel'
+      match: '(?<=\\s|\\[)-[A-Za-z][A-Za-z0-9_]*',
+      name: 'constant.other.flag.mel'
     },
     numbers: {
-      match: '\\b[0-9]+(?:\\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\\b',
+      match: '(?<![\\w$])(?:0[xX][0-9a-fA-F]+|(?:[0-9]+(?:\\.[0-9]*)?|\\.[0-9]+)(?:[eE][+-]?[0-9]+)?)(?!\\w)',
       name: 'constant.numeric.mel'
     },
     variables: {
@@ -65,16 +72,29 @@ export const melLanguage = {
     },
     declarations: {
       match:
-        '\\b(global|proc|local|static|int|float|string|vector|matrix|boolean|void|array|stringArray|intArray|floatArray|vectorArray)\\b',
+        '\\b(global|proc|int|float|string|vector|matrix)\\b',
       name: 'storage.type.mel'
     },
     keywords: {
-      match: '\\b(if|else|for|in|while|do|return|break|continue|switch|case|default|and|or|not|else)\\b',
+      match: '\\b(if|else|for|in|while|do|return|break|continue|switch|case|default)\\b',
       name: 'keyword.control.mel'
+    },
+    constants: {
+      match: '\\b(true|false|on|off)\\b',
+      name: 'constant.language.boolean.mel'
     },
     functions: {
       match: '\\b[A-Za-z_][A-Za-z0-9_]*(?=\\s*\\()',
       name: 'entity.name.function.mel'
+    },
+    commands: {
+      // MEL commands can omit parentheses, including inside backtick expressions.
+      match: '(?:^\\s*|(?<=[;{}\\x60])\\s*)(?!(?:global|proc|int|float|string|vector|matrix|if|else|for|in|while|do|return|break|continue|switch|case|default|true|false|on|off)\\b)([A-Za-z_][A-Za-z0-9_]*)',
+      captures: { '1': { name: 'entity.name.function.mel' } }
+    },
+    operators: {
+      match: '[+*/%=!<>|&^~?:-]+',
+      name: 'keyword.operator.mel'
     }
   }
 }

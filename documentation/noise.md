@@ -2,7 +2,7 @@
 
 ## Random Placement
 
-By default, hair is created on the surface with equal distance. If you enable **random placement**, the hair placement becomes chaotic.
+By default, strands are evenly spaced on the surface. Enable **Random Placement** to vary their positions.
 
 | Placement off | Placement on |
 |---|---|
@@ -10,7 +10,7 @@ By default, hair is created on the surface with equal distance. If you enable **
 
 ## Noise
 
-Noise is needed to curve the hair and give it a wavy look.
+Noise bends strands to create waves and irregularity.
 
 To correctly display the frequency and amplitude of the wave, you need to increase the number of [hair segments](/documentation/segments-and-density).
 
@@ -38,7 +38,7 @@ Additional small waves superimposed on top of the main ones.
 
 ## Persistence
 
-Change of weight between frequency waves and octave waves.
+Persistence controls the contribution of the finer octave waves.
 
 <figure class="ahoge-figure">
   <img src="/images/documentation/persistance.webp" alt="Noise persistence" />
@@ -78,7 +78,7 @@ Vary the noise level between different hairs.
 
 ## Randomize Noise Distribution
 
-Change the amount of hair with strong distortion versus low distortion.
+Use the ramp to control the proportion of strands with strong or subtle noise.
 
 <figure class="ahoge-figure">
   <img src="/images/documentation/random_noise_distrib.webp" alt="Randomize noise distribution" />

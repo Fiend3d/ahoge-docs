@@ -1,6 +1,6 @@
 # ahogeCmd
 
-The only command the Ahoge plug-in registers. Everything it does is picked by flags, and it works on the current selection or on the objects you name.
+`ahogeCmd` handles geometry queries, conversion and export. Flags select the operation; depending on the operation, it uses the current selection or the objects you specify.
 
 ```mel
 ahogeCmd [-mesh <string>] [-closestPoint <x> <y> <z>]
@@ -13,7 +13,7 @@ ahogeCmd [-mesh <string>] [-closestPoint <x> <y> <z>]
           [-exportUV <bool>]];
 ```
 
-The plug-in must be loaded first — `loadPlugin ahoge`, or `require("ahoge", "1.0.0")` in Python.
+The plug-in must be loaded first — `loadPlugin "ahoge";` in MEL, or `cmds.loadPlugin("ahoge")` in Python after importing `maya.cmds`.
 
 ## Flags
 
@@ -40,7 +40,7 @@ The plug-in must be loaded first — `loadPlugin ahoge`, or `require("ahoge", "1
 
 ## Closest point on a mesh
 
-Used all over Ahoge's own tools to snap things to geometry:
+Use this query to find a point on a mesh, for example when snapping a tool to its surface:
 
 ```mel
 global proc exampleClosestPoint() {

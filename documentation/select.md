@@ -7,12 +7,12 @@ Selection tools for Ahoge hair and its source surfaces.
 > **Ahoge menu → Miscellaneous → Select Connected Surfaces**
 
 ```mel
-ahogeTools_selectConnectedSurfaces
+ahogeTools_selectConnectedSurfaces;
 ```
 
 Select an `ahogeShape` node, run the command, and Ahoge selects the NURBS surfaces connected to it. Use it before rigging, moving or disconnecting the source surfaces.
 
-## Select Children (Outliner)
+## Select Children (Outliner) {#outliner}
 
 The **Ahoge Outliner** is the reliable way to find hair nodes in a busy scene.
 
@@ -40,7 +40,7 @@ Right-click gives **Select Children**, **Select All**, **Collapse All** and **Ex
 > **Ahoge menu → Miscellaneous → Root Pivot**
 
 ```mel
-ahogeTools_rootPivot
+ahogeTools_rootPivot;
 ```
 
 Moves the pivot of each selected curve and surface to its root: a curve's first CV, or the centre of a surface's first ring. Hair transforms then rotate around the roots instead of the object origin — essential for the [Curve Brush](/documentation/tools/curve-brush) and for posing with [Surface Rig](/documentation/surface-rig).

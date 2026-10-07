@@ -33,7 +33,7 @@ Ahoge registers its tools as Maya run-time commands, in the command category **M
 | `AhogeCarouselTool` | Activates the Carousel | Move and rotate NURBS surfaces |
 | `AhogeCarouselToolOptions` | Opens Carousel Tool Settings | Move and rotate NURBS surfaces options |
 
-Each tool command is a pair: the plain name activates the tool, the `-Options` variant activates it **and** opens its Tool Settings window — which is what double-clicking the shelf button does.
+Each tool command is a pair: the plain name activates the tool, the `Options` variant activates it **and** opens its Tool Settings window — which is what double-clicking the shelf button does.
 
 ```mel
 AhogeCurveBrushTool;          // activate
@@ -48,8 +48,8 @@ The Ahoge shelf holds one button per tool plus the menu actions. The tool button
 
 ## Hotkeys
 
-**Windows → Settings/H preferences → Hotkey Editor** → search `Ahoge`. Bind `AhogeCurveBrushTool`, `AhogeSurfaceBrushTool` or `AhogeCarouselTool` to whatever you prefer.
+**Windows → Settings/Preferences → Hotkey Editor** → search `Ahoge`. Bind `AhogeCurveBrushTool`, `AhogeSurfaceBrushTool` or `AhogeCarouselTool` to your preferred hotkeys.
 
 ## Opening a tool's settings from a script
 
-Double-clicking a shelf button, or pressing the tool button twice, runs the `-Options` command. From a script you can also query and set the settings directly through the context commands — see [Context commands](/documentation/commands/context-commands).
+Double-clicking a shelf button, or pressing the tool button twice, runs the `Options` command. From a script you can also query and set the settings directly through the context commands — see [Context commands](/documentation/commands/context-commands).

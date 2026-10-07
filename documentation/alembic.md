@@ -29,7 +29,7 @@ Every flag is listed under [ahogeCmd](/documentation/commands/ahogecmd).
 | **Auto groom_group_id** | off | bool | Assign group ids automatically |
 | **Export groom_root_uv** | off | bool | Write root UVs (see *Transfer UV*) |
 
-The default path is `test.abc` inside `$MAYA_APP_DIR/projects/default/data/` — Ahoge's own scratch folder, so an export without changing the path lands somewhere harmless.
+The default output is `$MAYA_APP_DIR/projects/default/data/test.abc`. Choose a project-specific path and filename before exporting.
 
 ## groom_group_id
 

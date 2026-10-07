@@ -7,7 +7,7 @@ Ahoge hair is a procedural node. Converting it freezes the result into ordinary 
 ## Convert to Curves
 
 ```mel
-ahogeTools_convertToCurves(false)
+ahogeTools_convertToCurves(false);
 ```
 
 Converts the selected `ahogeShape` nodes to NURBS curves — one curve per hair strand, with the current [width](/documentation/width) baked into the curve.
@@ -15,7 +15,7 @@ Converts the selected `ahogeShape` nodes to NURBS curves — one curve per hair 
 ## Convert to Curves (Grouped)
 
 ```mel
-ahogeTools_convertToCurves(true)
+ahogeTools_convertToCurves(true);
 ```
 
 Same as above, but the resulting curves are grouped, which keeps large conversions organized.
@@ -42,7 +42,7 @@ Converts the selected `ahogeShape` nodes to mesh tubes.
 Conversion is destructive: the result is static geometry and no longer responds to Ahoge attributes. Keep the original Ahoge node hidden, or work on a duplicated Ahoge node (see [Duplicate](/documentation/duplicate)).
 :::
 
-## Mesh to Surface (the other direction)
+## Mesh to Surface
 
 > **Ahoge menu → Tools → Mesh to Surface**
 
