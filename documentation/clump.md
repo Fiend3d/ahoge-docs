@@ -17,6 +17,4 @@
 
 Clump is one of the attribute groups transferred by **Paste Attributes** — see [Misc tools](/documentation/misc).
 
-::: tip
-The full Clump rollout — `clump`, `clumpFill`, `clumpCut`, `clumpsMin`, `clumpsMax`, `clumpFlyAway`, `clumpRamp` and the Clump Noise sub-rollout — is listed with defaults on the [ahogeShape attributes](/documentation/nodes/ahoge-shape#clump) page.
-:::
+See [Clump attributes](/documentation/nodes/ahoge-shape#clump) for individual controls and defaults.

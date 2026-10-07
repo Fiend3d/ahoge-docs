@@ -14,7 +14,7 @@
 /* Gallery / demo grids — images keep their aspect ratio, nothing is cropped */
 .ahoge-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 14px;
   align-items: start;
   margin: 18px 0;
@@ -122,13 +122,14 @@ body.ahoge-lightbox-open {
 /* Video tutorial cards */
 .ahoge-videos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 18px;
   margin: 18px 0;
 }
 
 .ahoge-video {
   display: block;
+  min-width: 0;
 }
 
 .ahoge-video-thumb {
@@ -148,6 +149,8 @@ body.ahoge-lightbox-open {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .ahoge-video-play {
@@ -226,7 +229,7 @@ body.ahoge-lightbox-open {
 /* Link cards (/links) */
 .ahoge-links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 12px;
   margin: 24px 0;
 }
@@ -351,4 +354,68 @@ body.ahoge-lightbox-open {
   border-color: var(--vp-c-brand-1);
   background: var(--vp-c-brand-soft);
   color: var(--vp-c-brand-1);
+}
+
+/* Keep wide references scrollable without widening the whole page. */
+.vp-doc table {
+  max-width: 100%;
+  overscroll-behavior-x: contain;
+}
+
+.ahoge-lightbox-caption {
+  max-width: 100%;
+  text-align: center;
+  overflow-wrap: anywhere;
+  overflow-y: auto;
+}
+
+@media (max-width: 640px) {
+  .ahoge-video-title,
+  .ahoge-link-title {
+    overflow-wrap: anywhere;
+  }
+
+  .vp-doc .ahoge-site,
+  .vp-doc .ahoge-link-row a {
+    min-height: 44px;
+  }
+
+  .ahoge-lightbox {
+    padding: max(60px, env(safe-area-inset-top)) 16px max(76px, env(safe-area-inset-bottom));
+  }
+
+  .ahoge-lightbox img {
+    max-width: 100%;
+    max-height: calc(100dvh - 200px);
+    object-fit: contain;
+  }
+
+  .ahoge-lightbox-caption {
+    max-height: 64px;
+    flex-shrink: 0;
+  }
+
+  .ahoge-lightbox-close,
+  .ahoge-lightbox-nav {
+    min-width: 48px;
+    min-height: 48px;
+    opacity: 1;
+    border-radius: 50%;
+    background: rgb(0 0 0 / 0.45);
+  }
+
+  .ahoge-lightbox-close {
+    top: max(8px, env(safe-area-inset-top));
+    right: 8px;
+  }
+
+  .ahoge-lightbox-nav.prev,
+  .ahoge-lightbox-nav.next {
+    top: auto;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    transform: none;
+  }
+
+  .ahoge-lightbox-nav.prev { left: calc(50% - 60px); }
+  .ahoge-lightbox-nav.next { right: calc(50% - 60px); }
 }

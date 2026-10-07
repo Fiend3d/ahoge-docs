@@ -15,7 +15,7 @@ Everything Ahoge-related lives in these places.
     <AhogeIcon class="ahoge-link-icon" name="artstation" />
     <span class="ahoge-link-text">
       <span class="ahoge-link-title">ArtStation</span>
-      <span class="ahoge-link-desc">Gallery of Ahoge work</span>
+      <span class="ahoge-link-desc">Plugin downloads and gallery of Ahoge work</span>
       <span class="ahoge-link-url">artstation.com/ahoge_hair</span>
     </span>
   </a>
@@ -39,7 +39,7 @@ Everything Ahoge-related lives in these places.
     <AhogeIcon class="ahoge-link-icon" name="ahoge" />
     <span class="ahoge-link-text">
       <span class="ahoge-link-title">Official wiki</span>
-      <span class="ahoge-link-desc">The authoritative documentation — where it differs from this site, the wiki wins</span>
+      <span class="ahoge-link-desc">Ahoge wiki</span>
       <span class="ahoge-link-url">ahoge.wiki.gd</span>
     </span>
   </a>
@@ -64,6 +64,6 @@ Artists featured in the demo section:
 
 ## About this site
 
-This site is a reorganization of the Ahoge documentation, written from the official wiki at [ahoge.wiki.gd](https://ahoge.wiki.gd/). It is not a substitute for the official wiki — where the two differ, the official wiki and the current build of Ahoge are authoritative.
+This site brings together Ahoge workflow guides, command references and tutorials.
 
-Ahoge is a commercial project: downloads, news and updates are published on [Boosty](https://boosty.to/ahoge).
+Ahoge is a commercial project. Downloads are available on [Boosty](https://boosty.to/ahoge) and [ArtStation](https://www.artstation.com/ahoge_hair); news and updates are posted on Boosty.

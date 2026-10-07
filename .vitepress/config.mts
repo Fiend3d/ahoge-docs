@@ -123,6 +123,7 @@ export default defineConfig({
           items: [
             { text: 'Alembic export', link: '/documentation/alembic' },
             { text: 'Unreal Engine export', link: '/documentation/unreal' },
+            { text: 'Marmoset Toolbag export', link: '/documentation/marmoset' },
             { text: 'Arnold', link: '/documentation/arnold' },
             { text: 'Renderers (3Delight, RenderMan)', link: '/documentation/renderers' }
           ]
@@ -136,7 +137,7 @@ export default defineConfig({
             { text: 'Quick Start', link: '/tutorials/quick-start' },
             { text: 'Video tutorials', link: '/tutorials/videos' },
             { text: 'XGen guides for Nurbopus', link: '/tutorials/xgen-guides' },
-            { text: 'Export to Unreal Engine', link: '/tutorials/exporting-to-unreal' },
+            { text: 'Export to Unreal Engine', link: '/documentation/unreal' },
             { text: 'Set up for dynamic nHair', link: '/tutorials/dynamic-nhair' }
           ]
         }

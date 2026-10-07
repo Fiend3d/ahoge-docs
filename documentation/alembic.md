@@ -12,6 +12,8 @@ ahogeCmd -e "C:/work/char01/hair.abc" -exportMode "unreal" -timeRange "time_slid
 
 Every flag is listed under [ahogeCmd](/documentation/commands/ahogecmd).
 
+Supported export presets are **Default**, **Unreal** and **Marmoset**. For Toolbag, select **Marmoset** and follow [Export Alembic to Marmoset Toolbag](/documentation/marmoset).
+
 ## Export options
 
 | Option | Default | Values / range | Description |
@@ -58,3 +60,5 @@ See the [dynamic nHair tutorial](/tutorials/dynamic-nhair) for the Maya-side set
 ## Next step
 
 [Export Alembic to Unreal Engine](/documentation/unreal) covers the Unreal side of the same export.
+
+[Export Alembic to Marmoset Toolbag](/documentation/marmoset) covers groom import, scale, strand width and material setup in Toolbag.

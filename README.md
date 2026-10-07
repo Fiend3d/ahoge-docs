@@ -10,7 +10,7 @@ Official links: [Boosty](https://boosty.to/ahoge) · [wiki](https://ahoge.wiki.g
 ## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev      # http://localhost:5173
 ```
 
@@ -24,17 +24,15 @@ npm run check    # build + verify internal links and images
 
 ## Deploy to GitHub Pages
 
-Ahoge is a commercial project, so the source stays **private** — the repository is private and only the
-built site is published, by `.github/workflows/deploy.yml` (build with `GITHUB_PAGES=true`, then
-`upload-pages-artifact` / `deploy-pages`).
+The documentation repository is public. GitHub Pages publishes the built site through
+`.github/workflows/deploy.yml`, which builds and checks the site with `GITHUB_PAGES=true`,
+then runs `upload-pages-artifact` / `deploy-pages`.
 
 1. Push to the `main` branch — the workflow runs on every push to `main` and on `workflow_dispatch`.
-2. In **Settings → Pages**, set **Source** to **GitHub Actions**. Serving a Pages site from a private
-   repository needs a plan that includes it (Pro / Team / Enterprise); on a free account the repository
-   has to be public.
+2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
 3. `REPO` in `.vitepress/config.mts` must equal the repository name: it sets the site `base`, so the
    workflow builds with the correct `/ahoge-docs/` path and the site is served at
-   `https://<owner>.github.io/ahoge-docs/`.
+   `https://fiend3d.github.io/ahoge-docs/`.
 
 For a custom domain, set `base` in `.vitepress/config.mts` to `/`.
 
@@ -129,7 +127,7 @@ because the wiki does not document them:
 | `documentation/commands/` | `ahoge.mll` flag probe (`ahogeCmd -<flag>` with the wrong arity reports how many arguments a flag expects) and the calls in `ahoge_ui.py` / `ahoge_tools.py` for the value strings |
 | `documentation/tools/` | `ahogeRunTimeCommands.mel` for the run-time commands, `ahogeTools.mel` for the menu items, `curveBrushProperties.mel` / `surfaceBrushProperties.mel` / `carouselProperties.mel` for control labels and tooltips, `*Values.mel` for the context command flags |
 
-Where this site and the official wiki differ, the wiki and the current Ahoge build are authoritative.
+Verify technical details against the current Ahoge build; wiki pages may be outdated.
 Never state a default or a range that has not been read off the node or the plug-in. No Ahoge attribute
 has hard `min` / `max` clamps, so the attribute tables carry no Range column — limits that are only
 semantic (a share between 0 and 1) are explained in the text instead.

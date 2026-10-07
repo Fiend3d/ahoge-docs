@@ -10,7 +10,7 @@ Ahoge generates hair with three node types: `ahogeShape`, `nurbopusNode` and `sw
 4. Shape the result with the interactive tools: [Curve Brush](/documentation/tools/curve-brush), [Surface Brush](/documentation/tools/surface-brush), [Carousel](/documentation/tools/carousel), [Nurbopus](/documentation/nurbopus), [Swirl](/documentation/swirl), [Select](/documentation/select).
 5. Combine hair shapes: [Connect / Disconnect](/documentation/connect-disconnect), [Duplicate](/documentation/duplicate).
 6. Preview and render: [Viewport](/documentation/viewport), [Arnold](/documentation/arnold), [3Delight and RenderMan](/documentation/renderers).
-7. Deliver: [Alembic export](/documentation/alembic), [Unreal Engine export](/documentation/unreal).
+7. Deliver: [Alembic export](/documentation/alembic), [Unreal Engine export](/documentation/unreal), [Marmoset Toolbag export](/documentation/marmoset).
 
 ## Nodes
 
@@ -77,10 +77,3 @@ Menu items, shelf buttons and hotkeys all end up calling one of those, so anythi
 - [Unreal Engine export](/documentation/unreal)
 - [Arnold](/documentation/arnold)
 - [3Delight and RenderMan](/documentation/renderers)
-
-::: tip
-The authoritative source for Ahoge is the official wiki at
-[https://ahoge.wiki.gd/](https://ahoge.wiki.gd/) and the announcements on
-[Boosty](https://boosty.to/ahoge). This site reorganizes that information so it
-can be browsed quickly and offline.
-:::

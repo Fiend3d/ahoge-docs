@@ -26,15 +26,52 @@ features:
     details: Grow hair along the V-coordinate of any NURBS surface.
     link: /documentation/create
   - title: Full strand control
-    details: Segments, density, width ramps, color, noise, spray, multistrand and clump — every parameter is animatable and copyable between hairs.
+    details: Segments, density, width ramps, color, noise, spray, multistrand and clump — every parameter is animatable and copyable between Ahoge shapes.
     link: /documentation/nodes/ahoge-shape
   - title: Production toolset
     details: Nurbopus, Swirl, Carousel, curve and surface brushes, outliner, convert to mesh, topology repair and surface rig tools.
     link: /documentation/misc
   - title: Arnold, 3Delight and RenderMan
-    details: Renders as native hair in Arnold, 3Delight and RenderMan for Maya, exports to Alembic and ships to Unreal Engine with attributes preserved.
+    details: Renders as native hair in Arnold, 3Delight and RenderMan for Maya, and exports Alembic grooms for Unreal Engine and Marmoset Toolbag.
     link: /documentation/renderers
 ---
+
+## See the workflow
+
+Watch how Ahoge grows hair from surfaces, builds a hairstyle, and turns modeled geometry into hair. Click a thumbnail to play.
+
+<div class="ahoge-videos">
+
+<div class="ahoge-video">
+  <button class="ahoge-video-thumb" type="button" data-video="n8byp1-GBnw" data-title="Creating hair with Ahoge in Autodesk Maya" aria-label="Play Creating hair with Ahoge in Autodesk Maya">
+    <img loading="lazy" src="https://i.ytimg.com/vi/n8byp1-GBnw/hq720.jpg" alt="Creating hair with Ahoge in Autodesk Maya" />
+    <span class="ahoge-video-play" aria-hidden="true"></span>
+  </button>
+  <a class="ahoge-video-title" href="https://www.youtube.com/watch?v=n8byp1-GBnw">Creating hair with Ahoge in Autodesk Maya</a>
+  <span class="ahoge-video-meta">6:58</span>
+</div>
+
+<div class="ahoge-video">
+  <button class="ahoge-video-thumb" type="button" data-video="vZvSjksTXOM" data-title="Double Bun hairstyle creation in Maya" aria-label="Play Double Bun hairstyle creation in Maya">
+    <img loading="lazy" src="https://i.ytimg.com/vi/vZvSjksTXOM/hq720.jpg" alt="Double Bun hairstyle creation in Maya" />
+    <span class="ahoge-video-play" aria-hidden="true"></span>
+  </button>
+  <a class="ahoge-video-title" href="https://www.youtube.com/watch?v=vZvSjksTXOM">Double Bun hairstyle creation in Maya</a>
+  <span class="ahoge-video-meta">21:02</span>
+</div>
+
+<div class="ahoge-video">
+  <button class="ahoge-video-thumb" type="button" data-video="SGBAhTa8tQ0" data-title="Geometry to Hair with Ahoge plugin in Maya" aria-label="Play Geometry to Hair with Ahoge">
+    <img loading="lazy" src="https://i.ytimg.com/vi/SGBAhTa8tQ0/hq720.jpg" alt="Geometry to Hair with Ahoge plugin in Maya" />
+    <span class="ahoge-video-play" aria-hidden="true"></span>
+  </button>
+  <a class="ahoge-video-title" href="https://www.youtube.com/watch?v=SGBAhTa8tQ0">Geometry to Hair with Ahoge</a>
+  <span class="ahoge-video-meta">25:58</span>
+</div>
+
+</div>
+
+Start with the [Quick Start](/tutorials/quick-start), or browse all [video tutorials](/tutorials/videos).
 
 ## About us
 

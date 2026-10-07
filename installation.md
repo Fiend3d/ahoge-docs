@@ -1,7 +1,7 @@
 # Installation
 
-Ahoge ships as a Maya module for Windows. Everything is published on
-[Boosty](https://boosty.to/ahoge) — subscribe there and download the build made for your Maya version.
+Ahoge ships as a Maya module for Windows. Download it from
+[Boosty](https://boosty.to/ahoge) or [ArtStation](https://www.artstation.com/ahoge_hair), choosing the build for your Maya version.
 
 ## Requirements
 
@@ -17,7 +17,7 @@ Linux and macOS are not supported at the moment.
 
 ## Install
 
-1. Download the archive for your Maya version from [Boosty](https://boosty.to/ahoge).
+1. Download the archive for your Maya version from [Boosty](https://boosty.to/ahoge) or [ArtStation](https://www.artstation.com/ahoge_hair).
 2. Unpack it to a permanent folder, for example `C:\ahoge\maya_2026`.
 3. Run **`ahoge_installer.exe`** from the unpacked folder.
 4. The installer detects the Maya versions on your machine — select the version to install for. Run it

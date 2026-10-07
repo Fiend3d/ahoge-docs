@@ -38,7 +38,8 @@ viewport:
 
 Delivery does not depend on which renderer you use: **Ahoge → Export → Export Alembic** writes the
 groom for other DCCs and game engines. See [Alembic export](/documentation/alembic) and
-[Export to Unreal Engine](/documentation/unreal).
+[Export to Unreal Engine](/documentation/unreal). The **Marmoset** preset exports hair for
+[Marmoset Toolbag 5 or later](/documentation/marmoset), where the Alembic file is imported as a groom.
 
 ::: tip
 The 3Delight and RenderMan integrations are newer than the Arnold path and are published as

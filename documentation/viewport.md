@@ -20,7 +20,7 @@ Switch between lightweight representations (curves / thin preview) and a fuller 
 ## Performance checklist
 
 - Lower **Preview Percent** first — it is the cheapest win.
-- Lower **Preview Sides** to 3 for very dense hair.
+- Keep **Preview Sides** at its default of `2` for a lightweight ribbon preview.
 - Reduce [segments](/documentation/segments-and-density) while blocking out the shape; raise it again for the final look.
 - Reduce [multistrand](/documentation/multistrand) during layout and restore it before rendering.
 - Hide Ahoge nodes you are not editing — the [Ahoge Outliner](/documentation/select#outliner) makes this easy.
