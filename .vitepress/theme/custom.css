@@ -1,0 +1,354 @@
+:root {
+  --vp-c-brand-1: #4f9cf9;
+  --vp-c-brand-2: #1976d2;
+  --vp-c-brand-3: #1259a3;
+  --vp-c-brand-soft: rgba(25, 118, 210, 0.16);
+}
+
+/* Hero logo */
+.VPHomeHero .image img,
+.VPImage.logo {
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.25));
+}
+
+/* Gallery / demo grids — images keep their aspect ratio, nothing is cropped */
+.ahoge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  align-items: start;
+  margin: 18px 0;
+}
+
+.ahoge-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* Click to open full size */
+.ahoge-grid img,
+.ahoge-figure img {
+  cursor: zoom-in;
+}
+
+body.ahoge-lightbox-open {
+  overflow: hidden;
+}
+
+.ahoge-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.86);
+  cursor: zoom-out;
+}
+
+.ahoge-lightbox img {
+  max-width: min(94vw, 1200px);
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  cursor: default;
+}
+
+.ahoge-lightbox-caption {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ahoge-lightbox-close,
+.ahoge-lightbox-nav {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 30px;
+  line-height: 1;
+  padding: 8px 14px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.ahoge-lightbox-close:hover,
+.ahoge-lightbox-nav:hover {
+  opacity: 1;
+}
+
+.ahoge-lightbox-close {
+  top: 10px;
+  right: 14px;
+}
+
+.ahoge-lightbox-nav.prev {
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ahoge-lightbox-nav.next {
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ahoge-figure {
+  margin: 18px 0;
+  text-align: center;
+}
+
+.ahoge-figure img {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.ahoge-figure figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+}
+
+/* Video tutorial cards */
+.ahoge-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin: 18px 0;
+}
+
+.ahoge-video {
+  display: block;
+}
+
+.ahoge-video-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg-soft);
+  cursor: pointer;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.ahoge-video-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ahoge-video-play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.ahoge-video-play::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 22px solid #fff;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  filter: drop-shadow(0 2px 8px rgb(0 0 0 / 0.65));
+}
+
+.ahoge-video-thumb:hover .ahoge-video-play::before,
+.ahoge-video-thumb:focus-visible .ahoge-video-play::before {
+  border-left-color: var(--vp-c-brand-1);
+}
+
+.ahoge-video-frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 10px;
+}
+
+/* VitePress styles doc links as `.vp-doc a` (specificity 0,1,1) and `.vp-doc a:hover` (0,2,1),
+   which outranks a plain class. Every rule below that targets an <a> is therefore prefixed with
+   `.vp-doc` so the underline and the default hover colour are actually overridden. */
+.vp-doc .ahoge-video-title {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc .ahoge-video-title:hover {
+  color: var(--vp-c-brand-1);
+}
+
+.ahoge-video-meta {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+}
+
+.ahoge-video-desc {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
+}
+
+/* Brand icons — inline SVG (see AhogeIcon.vue), sized in em and coloured by currentColor,
+   so page icons match the nav bar icons exactly and follow light/dark automatically. */
+.ahoge-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 20px;
+  line-height: 0;
+}
+
+.ahoge-icon svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
+/* Link cards (/links) */
+.ahoge-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.vp-doc .ahoge-link-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  /* .vp-doc underlines every link; a card is not a text link */
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.vp-doc .ahoge-link-card:hover {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-elv);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+}
+
+.ahoge-link-card .ahoge-icon {
+  /* 22px keeps the Ahoge mark's 1.1-unit outline about 1px wide */
+  font-size: 22px;
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+}
+
+.ahoge-link-card:hover .ahoge-link-title {
+  color: var(--vp-c-brand-1);
+}
+
+.ahoge-link-text {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.ahoge-link-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.ahoge-link-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
+}
+
+.ahoge-link-url {
+  font-family: var(--vp-font-family-mono);
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+  overflow-wrap: anywhere;
+}
+
+/* Site chips (front page) */
+.ahoge-sites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 10px;
+}
+
+.vp-doc .ahoge-site {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 14px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg-soft);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.vp-doc .ahoge-site .ahoge-icon {
+  font-size: 20px;
+  color: var(--vp-c-brand-1);
+}
+
+.vp-doc .ahoge-site:hover {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  transform: translateY(-1px);
+}
+
+/* Internal section links (front page) — <AhogeLinkRow /> */
+.ahoge-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.vp-doc .ahoge-link-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 13px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg-soft);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.vp-doc .ahoge-link-row a:hover {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+}
