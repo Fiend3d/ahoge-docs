@@ -14,6 +14,7 @@ const BASE = process.env.GITHUB_PAGES ? `/${REPO}/` : '/'
 
 export default defineConfig({
   base: BASE,
+  srcExclude: ['README.md'],
   lang: 'en-US',
   title: 'Ahoge',
   description:

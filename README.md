@@ -30,7 +30,7 @@ npm ci
 npm run dev
 ```
 
-Open the address shown in the terminal, usually **http://localhost:5173/**. The preview updates as you edit the files. Press `Ctrl+C` to stop it.
+Open the address shown in the terminal, usually `http://localhost:5173/`. The preview updates as you edit the files. Press `Ctrl+C` to stop it.
 
 To build and preview the published version:
 
